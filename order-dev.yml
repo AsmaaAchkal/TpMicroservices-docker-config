@@ -1,0 +1,50 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: order
+  datasource:
+    username: root
+    url: jdbc:mysql://mysql:3306/orders_db
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+  feign:
+  client:
+    config:
+      customer:
+        url: http://customer:8081/api/customers
+      product:
+        url: http://products:8082/api/products
+
+  cloud:
+    config:
+      uri: http://server-config:8888
+      profile: dev
+      label: main
+
+#   boot:
+#       admin:
+#         client:
+#           url: http://localhost:8080
+
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#   instance:
+#     preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

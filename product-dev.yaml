@@ -1,0 +1,42 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: product
+  datasource:
+    username: root
+    url: jdbc:mysql://mysql:3306/products_db
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+  
+  cloud:
+    config:
+      uri: http://server-config:8888
+      profile: dev
+      label: main
+
+#   boot:
+#       admin:
+#         client:
+#           url: http://localhost:8080
+
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#   instance:
+#     preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
