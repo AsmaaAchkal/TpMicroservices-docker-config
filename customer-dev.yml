@@ -6,7 +6,7 @@ spring:
     name: customer
   datasource:
     username: root
-    url: jdbc:mysql://customer-db:3306/customersdb
+    url: jdbc:mysql://mysql-customer:3306/customersdb
     password: root
   jpa:
     hibernate:
