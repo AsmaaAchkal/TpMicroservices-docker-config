@@ -6,7 +6,7 @@ spring:
     name: order
   datasource:
     username: root
-    url: jdbc:mysql://order-db:3306/ordersdb
+    url: jdbc:mysql://mysql-orders:3306/ordersdb
     password: root
   jpa:
     hibernate:
