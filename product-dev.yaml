@@ -6,7 +6,7 @@ spring:
     name: product
   datasource:
     username: root
-    url: jdbc:mysql://product-db:3306/productsdb
+    url: jdbc:mysql://mysql-products:3306/productsdb
     password: root
   jpa:
     hibernate:
