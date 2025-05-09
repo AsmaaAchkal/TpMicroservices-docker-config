@@ -8,6 +8,7 @@ spring:
     username: root
     url: jdbc:mysql://mysql-products:3306/productsdb
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
